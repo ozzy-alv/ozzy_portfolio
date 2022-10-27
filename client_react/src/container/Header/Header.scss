@@ -1,0 +1,261 @@
+#home {
+  position: relative;
+  background: url('../../assets/sky.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+
+  .app__wrapper {
+    padding: 0;
+
+    .copyright {
+      display: none;
+    }
+  }
+}
+
+.app__header {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+
+  padding: 6rem 2rem 0rem;
+
+  @media screen and (min-width: 2000px) {
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 6rem 1rem 2rem;
+  }
+}
+
+.app__header-info {
+  flex: 0.65;
+  display: flex;
+  background-color: none;
+  padding: 20px;
+  border-radius: 30px;
+  min-width: 40px;
+  max-width: 220px;
+  min-height: 40px;
+  margin: 20px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: '';
+    background-color: var(--transparentWhite-color);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+  &:before {
+    width: 44px;
+    height: 44px;
+    top: -18px;
+    left: 28px;
+    box-shadow: -50px 30px 0 -12px var(--transparentWhite-color),
+      -50px 135px 0 -12px var(--transparentWhite-color);
+    z-index: 1;
+  }
+  &:after {
+    bottom: -15px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 45px -13px 0 0 var(--transparentWhite-color),
+      -24px 17px 0 -6px var(--transparentWhite-color),
+      -150px -6px 0 0 var(--transparentWhite-color);
+    z-index: 1;
+  }
+  .badge-cmp,
+  .tag-cmp {
+    padding: 1rem 2rem;
+    background: var(--transparentWhite-color);
+    border-radius: 50%;
+    flex-direction: row;
+    width: auto;
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-cmp {
+    flex-direction: column;
+    margin-top: 5rem;
+
+    p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  span {
+    font-size: 2.5rem;
+
+    @media screen and (min-width: 2000px) {
+      font-size: 5rem;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.app__header-circles {
+  flex: 0.75;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin-left: 1rem;
+
+  div {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+
+    background: var(--transparent-color);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 40%;
+      height: 40%;
+    }
+  }
+
+  // circles with different height & width
+
+  div:nth-child(1) {
+    width: 60px;
+    height: 60px;
+  }
+
+  div:nth-child(2) {
+    margin: 1rem;
+    width: 90px;
+    height: 90px;
+  }
+
+  div:nth-child(3) {
+    width: 110px;
+    height: 110px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    div:nth-child(2) {
+      width: 400px;
+      height: 400px;
+    }
+
+    div:nth-child(3) {
+      width: 170px;
+      height: 170px;
+    }
+
+    div:nth-child(1) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 0;
+
+    div {
+      margin: 1rem;
+    }
+  }
+}
+
+.app__header-img {
+  flex: 1;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  .overlay_circle {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: -180px;
+    z-index: 0;
+    width: 100%;
+    height: 90%;
+  }
+
+  @media screen and (max-width: 2000px) {
+    .overlay_circle {
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      right: 0;
+      bottom: -70px;
+      z-index: 0;
+      width: 100%;
+      height: 90%;
+    }
+    margin: 2rem 0;
+  }
+  @media screen and (max-width: 1390px) {
+    .overlay_circle {
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      right: 0;
+      bottom: -70px;
+      z-index: 0;
+      width: 100%;
+      height: 90%;
+    }
+    margin: 2rem 0;
+  }
+}
+
+.p-text-two {
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 960px) {
+  .app__header-badge {
+    display: none;
+  }
+  .app__header-info {
+    display: none;
+  }
+  .overlay_circle {
+    display: none;
+  }
+  .app_profile {
+    height: 90%;
+    transform: translateY(-40px);
+  }
+}
